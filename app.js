@@ -78,6 +78,7 @@ window.onload=() => {
    SearchBox.addEventListener('search',()=>{
     const SearchString=document.querySelector("#search-input").value.trim();
     const LowerSearchString=SearchString.toLowerCase();
+    SearchBox.value="";
     const SearchList=menu.filter((item)=> {
             return item.category.toLowerCase().indexOf(LowerSearchString)>=0
                    || item.description.toLowerCase().indexOf(LowerSearchString)>=0

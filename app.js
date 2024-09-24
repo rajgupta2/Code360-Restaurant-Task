@@ -31,6 +31,7 @@ function ReturnNode(item){
 
 window.onload=() => {
 
+
     const ItemsSection = document.querySelector("#MenuList");
     const ItemsList = menu.map((item) => ReturnNode(item));
     ItemsSection.innerHTML = ItemsList.join('');
@@ -76,16 +77,29 @@ window.onload=() => {
    const SearchBox=document.querySelector("#search-input");
    SearchBox.addEventListener('search',()=>{
     const SearchString=document.querySelector("#search-input").value.trim();
-    console.log(SearchString);
+    const LowerSearchString=SearchString.toLowerCase();
     const SearchList=menu.filter((item)=> {
-            return item.category.indexOf(SearchString)>=0
-                   || item.description.indexOf(SearchString)>=0
-                   || item.price.indexOf(SearchString)>=0
-                   || item.title.indexOf(SearchString)>=0 ;
+            return item.category.toLowerCase().indexOf(LowerSearchString)>=0
+                   || item.description.toLowerCase().indexOf(LowerSearchString)>=0
+                   || item.price.toLowerCase().indexOf(LowerSearchString)>=0
+                   || item.title.toLowerCase().indexOf(LowerSearchString)>=0 ;
 
     });
     const List= SearchList.map((item)=>ReturnNode(item));
     ItemsSection.innerHTML=List.join('');
+
+    if(window.innerWidth<=991){
+    const NavbarToggle=document.querySelector(".navbar-toggler");
+    NavbarToggle.click();
+    }
+
+   });
+
+
+   document.addEventListener("click",(target)=>{
+    const NavbarToggle=document.querySelector(".navbar-toggler");
+     if(target.target.attributes.class.value==="nav-link" && window.innerWidth<=991)
+           NavbarToggle.click();
    });
 
 }

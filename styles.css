@@ -1,0 +1,16 @@
+@media (max-width:576px ) {
+    .card-body{
+    min-height: 0vh;
+   }
+   .navbar-nav{
+    padding-left:2% !important;
+   }
+   #search-input{
+    margin-left:2% !important;
+    max-width:80vw !important;
+   }
+}
+
+@media (min-width: 992px) {
+
+}

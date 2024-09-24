@@ -15,7 +15,7 @@ const menu = [
 ];
 
 function ReturnNode(item){
-  return `<div class="col-sm-12 col-md-6 col-lg-4 mb-4 ${item.category}" id="${item.id}"  >
+  return `<div class="menu-item col-sm-12 col-md-6 col-lg-4 mb-4 ${item.category}" id="${item.id}"  >
           <div class="card">
             <img src="${item.img}" class="card-img-top" alt="${item.title}" >
             <div class="card-body" style="min-height:30vh">
